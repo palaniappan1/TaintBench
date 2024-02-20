@@ -232,5 +232,5 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
        name: Source-And-Sinks-2.7.1
-       path: $TBMAPPER/results
+       path: TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE/results
     
