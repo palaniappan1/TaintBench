@@ -134,19 +134,19 @@ jobs:
 #                   FlowDroid April 2.7.1          
 ############################################
     - name: Checkout latest Flowdroid
-      uses: action/checkout@v2
+      uses: actions/checkout@v2
       with:
         repository: secure-software-engineering/FlowDroid
         tag: 'TaintAnalysisTools'
         path: AnalysisTools/FlowDroid-latest
-        file: FlowDroid_2.7.1_Release.zip
+        ref: develop
 
     - name: Install Maven
       run: sudo apt-get update && sudo apt-get install -y maven
 
     - name: Build FlowDroid
       run: |
-        cd AnalysisTool/FlowDroid-latest
+        cd AnalysisToolS/FlowDroid-latest
         mvn clean package -DskipTests
 
     - name: Verify FlowDroid Build
@@ -155,7 +155,6 @@ jobs:
 ######################################################################
     - name: Remove .Zip files
       run: |
-#          sudo rm AnalysisTools/FlowDroid_2.7.1_Release.zip
           sudo rm -rf download
     
     - run: ls platforms
