@@ -24,9 +24,9 @@ jobs:
     env: 
       BREW: /home/runner/work/TaintBench/TaintBench/TBFramework/BREW-2.0.0-SNAPSHOT-EMSE 
       TBMAPPER: /home/runner/work/TaintBench/TaintBench/TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE
-      TOOL: /home/runner/work/TaintBench/TaintBench/AnalysisTools/FlowDroid-latest
-      VERSION: fdlatest
-      CONFIG: /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/fdlatest
+      TOOL: /home/runner/work/TaintBench/TaintBench/AnalysisTools/FlowDroid-2.14.1
+      VERSION: fd2141
+      CONFIG: /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/fd2141
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -167,7 +167,10 @@ jobs:
     - run: ls TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE
 
     - run: ls AnalysisTools/FlowDroid-2.14.1
-    
+
+
+    - name: List fd2141 folder
+      run: ls -R /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/fd2141
 ######################################################################
 #                 Run FlowDroid 2.7.1
 ######################################################################
