@@ -166,7 +166,7 @@ jobs:
 
     - run: ls TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE
 
-    - run: ls AnalysisTools/FlowDroid_2.14.1
+    - run: ls AnalysisTools/FlowDroid-2.14.1
     
 ######################################################################
 #                 Run FlowDroid 2.7.1
@@ -218,7 +218,7 @@ jobs:
     - name: Print Evaluation Results
       run: tail -5 TBFramework/BREW-2.0.0-SNAPSHOT-EMSE/upload/taintbench_log.txt
 
-    - name: Print Saved Results of FlowDroid 2.7.1
+    - name: Print Saved Results of FlowDroid 2.14.1
       run: |
            ls -R $BREW
            ls -R $TOOL
@@ -231,7 +231,7 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
        name: Raw-Results-of-FlowDroid-2.14.1
-       path: AnalysisTools/FlowDroid_2.14.1/savedResults
+       path: AnalysisTools/FlowDroid-2.14.1/savedResults
        
     - uses: actions/upload-artifact@v4
       with:
