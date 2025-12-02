@@ -169,8 +169,8 @@ jobs:
     - run: ls AnalysisTools/FlowDroid-2.14.1
 
 
-    - name: List fd2141 folder
-      run: ls -R /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/fd2141
+    - name: List taintbench_brew_configs
+      run: ls -R /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/
 ######################################################################
 #                 Run FlowDroid 2.7.1
 ######################################################################
