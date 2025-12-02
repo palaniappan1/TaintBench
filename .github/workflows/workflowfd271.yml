@@ -183,10 +183,6 @@ jobs:
           sudo chmod +x $BREW/flushMemory.sh
           sudo chmod +x $BREW/killpid.sh
          
-          echo copy the script clear.sh to clear previous analysis results and make sure it is executable 
-          sudo cp $CONFIG/clear.sh $TOOL/clear.sh
-          sudo chmod +x $TOOL/clear.sh
-          
           echo copy the configured config.properties to the BREW Folder 
           echo remove $BREW/config.properties
           sudo rm $BREW/config.properties
