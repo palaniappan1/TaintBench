@@ -1,10 +1,7 @@
 name: Evaluate FlowDroid April 2017 Nightly
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

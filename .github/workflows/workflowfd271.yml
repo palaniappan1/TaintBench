@@ -146,7 +146,7 @@ jobs:
 
     - name: Build FlowDroid
       run: |
-        cd AnalysisToolS/FlowDroid-latest
+        cd AnalysisTools/FlowDroid-latest
         mvn clean package -DskipTests
 
     - name: Verify FlowDroid Build
