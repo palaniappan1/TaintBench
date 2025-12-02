@@ -134,7 +134,7 @@ jobs:
 #                   FlowDroid April 2.7.1          
 ############################################
     - name: Checkout latest Flowdroid
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: secure-software-engineering/FlowDroid
         tag: 'TaintAnalysisTools'
@@ -224,17 +224,17 @@ jobs:
            ls -R $BREW
            ls -R $TOOL
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
        name: BREW-Benchmark-Result-File-FlowDroid-2.7.1
        path: TBFramework/BREW-2.0.0-SNAPSHOT-EMSE/upload
     
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
        name: Raw-Results-of-FlowDroid-2.7.1
        path: AnalysisTools/FlowDroid_2.7.1_Release/savedResults
        
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
        name: Source-And-Sinks-2.7.1
        path: TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE/results
