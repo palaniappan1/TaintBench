@@ -20,13 +20,13 @@ jobs:
 #                 Setup environments 
 ######################################################################
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env: 
       BREW: /home/runner/work/TaintBench/TaintBench/TBFramework/BREW-2.0.0-SNAPSHOT-EMSE 
       TBMAPPER: /home/runner/work/TaintBench/TaintBench/TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE
-      TOOL: /home/runner/work/TaintBench/TaintBench/AnalysisTools/FlowDroid_2.7.1_Release
-      VERSION: fd271
-      CONFIG: /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/fd271
+      TOOL: /home/runner/work/TaintBench/TaintBench/AnalysisTools/FlowDroid-latest
+      VERSION: fdlatest
+      CONFIG: /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/fdlatest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -133,23 +133,29 @@ jobs:
 ###########################################
 #                   FlowDroid April 2.7.1          
 ############################################
-    - name: Download FlowDroid 2.7.1
-      uses: Legion2/download-release-action@v2.1.0
+    - name: Checkout latest Flowdroid
+      uses: action/checkout@v2
       with:
-        repository: TaintBench/TaintBench
+        repository: secure-software-engineering/FlowDroid
         tag: 'TaintAnalysisTools'
-        path: AnalysisTools
-        file: FlowDroid_2.7.1_Release.zip 
-    
-    - name: Unzip
-      uses: TonyBogdanov/zip@1.0
-      with:
-        args: unzip -qq AnalysisTools/FlowDroid_2.7.1_Release.zip -d AnalysisTools
+        path: AnalysisTools/FlowDroid-latest
+        file: FlowDroid_2.7.1_Release.zip
+
+    - name: Install Maven
+      run: sudo apt-get update && sudo apt-get install -y maven
+
+    - name: Build FlowDroid
+      run: |
+        cd AnalysisTool/FlowDroid-latest
+        mvn clean package -DskipTests
+
+    - name: Verify FlowDroid Build
+      run: ls AnalysisTools/FlowDroid-latest/soot-infoflow/target
         
 ######################################################################
     - name: Remove .Zip files
       run: |
-          sudo rm AnalysisTools/FlowDroid_2.7.1_Release.zip
+#          sudo rm AnalysisTools/FlowDroid_2.7.1_Release.zip
           sudo rm -rf download
     
     - run: ls platforms
