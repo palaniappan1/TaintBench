@@ -191,7 +191,7 @@ jobs:
           echo Expanding the BREW Folder
           ls $BREW
           echo Expanding the taintbench_brew_configs Folder
-          ls taintbench_brew_configs
+          ls /home/runner/work/TaintBench/TaintBench/taintbench_brew_configs/
 
       - name: Run FlowDroid 2.7.1
         run: |
