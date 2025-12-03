@@ -188,6 +188,8 @@ jobs:
           
           echo copy the taintbench_brew_configs folder to the BREW folder 
           sudo mv taintbench_brew_configs $BREW/taintbench_brew_configs
+          echo Expanding the BREW Folder
+          ls $BREW
 
       - name: Run FlowDroid 2.7.1
         run: |
