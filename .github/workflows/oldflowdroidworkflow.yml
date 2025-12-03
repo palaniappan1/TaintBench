@@ -20,7 +20,7 @@ jobs:
     #                 Setup environments
     ######################################################################
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       BREW: /home/runner/work/TaintBench/TaintBench/TBFramework/BREW-2.0.0-SNAPSHOT-EMSE
       TBMAPPER: /home/runner/work/TaintBench/TaintBench/TBFramework/TBSaSMapper-1.0-SNAPSHOT-EMSE
